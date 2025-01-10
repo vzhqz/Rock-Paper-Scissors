@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Onest:wght@100..900&display=swap');
+
+.blueColor {color: rgb(21, 139, 218);}
+.greenColor {color: rgb(21, 206, 11);}
+.redColor {color: rgb(208, 25, 25);}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Onest", serif;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 36px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.choices {
+    margin: 15px 0;
+}
+
+.choices button {
+    font-size: 3.5em;
+    margin: 5px;
+    outline: none;
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(48, 179, 245);
+    cursor: pointer;
+    text-align: center;
+}
+
+.choices button:hover {
+    background-color: rgb(39, 160, 220);
+}
+
+.choices button:active {
+    opacity: .7;
+}
+
+#playerStatus, #computerStatus {
+    font-size: 1.8em;
+    font-weight: 650;
+}
+
+#result {
+    margin: 20px 0;
+    font-size: 3em;
+}
+
+#playerScore, #computerScore {
+    font-size: 1.5em;
+    font-weight: 650;
+}
