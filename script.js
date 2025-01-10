@@ -56,3 +56,13 @@ function playGame(playerChoice) {
     playerScoreDisplay.innerHTML = `Player score: <span class="${playerClass}">${playerScore}</span>`;
     computerScoreDisplay.innerHTML = `Computer score: <span class="${computerClass}">${computerScore}</span>`;
 }
+
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+    playerStatus.textContent = `Player: `;
+    computerStatus.textContent = `Computer: `;
+    resultDisplay.textContent = "";
+    playerScoreDisplay.textContent = `Player score: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer score: ${computerScore}`;
+}
