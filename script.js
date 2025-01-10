@@ -55,6 +55,32 @@ function playGame(playerChoice) {
 
     playerScoreDisplay.innerHTML = `Player score: <span class="${playerClass}">${playerScore}</span>`;
     computerScoreDisplay.innerHTML = `Computer score: <span class="${computerClass}">${computerScore}</span>`;
+    saveToLocalStorage()
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem("playerStatus", playerStatus.textContent);
+    localStorage.setItem("computerStatus", computerStatus.textContent);
+    localStorage.setItem("resultDisplay", resultDisplay.textContent);
+    localStorage.setItem("playerScore", playerScore);
+    localStorage.setItem("computerScore", computerScore);
+}
+
+function loadFromLocalStorage() {
+    const storedPlayerStatus = localStorage.getItem("playerStatus");
+    const storedComputerStatus = localStorage.getItem("computerStatus");
+    const storedResultDisplay = localStorage.getItem("resultDisplay");
+    const storedPlayerScore = localStorage.getItem("playerScore");
+    const storedComputerScore = localStorage.getItem("computerScore");
+
+    if(storedPlayerStatus) playerStatus.textContent = storedPlayerStatus;
+    if(storedComputerStatus) computerStatus.textContent = storedComputerStatus;
+    if(storedResultDisplay) resultDisplay.textContent = storedResultDisplay;
+    if(storedPlayerScore) playerScore = parseInt(storedPlayerScore, 10);
+    if(storedComputerScore) computerScore = parseInt(storedComputerScore, 10);
+
+    playerScoreDisplay.innerHTML = `Player score: <span>${playerScore}</span>`;
+    computerScoreDisplay.innerHTML = `Computer score: <span>${computerScore}</span>`;
 }
 
 function reset() {
@@ -65,4 +91,7 @@ function reset() {
     resultDisplay.textContent = "";
     playerScoreDisplay.textContent = `Player score: ${playerScore}`;
     computerScoreDisplay.textContent = `Computer score: ${computerScore}`;
+    localStorage.clear();
 }
+
+window.onload = loadFromLocalStorage()
